@@ -32,7 +32,6 @@ def get_currency():
     exchange_rate = {}
     for item in reply_json:
         exchange_rate[item['exchangedate']] = item['rate']
-    #print(exchange_rate)
     if 'today' in request.query:
         return "Today's (" + current_date_str_form2 + ") USD exchange rate is " + str(exchange_rate[current_date_str_form2])
     if 'yesterday' in request.query:
